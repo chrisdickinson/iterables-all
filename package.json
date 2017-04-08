@@ -1,6 +1,6 @@
 {
   "name": "@iterables/all",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Return true if all elements of an iterable match.",
   "main": "iterables-all.js",
   "scripts": {
