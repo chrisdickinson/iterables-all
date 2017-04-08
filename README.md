@@ -1,32 +1,32 @@
-# @iterables/any
+# @iterables/all
 
-Return true if any element of an iterable matches.
+Return true if all elements of an iterable match.
 
 ```javascript
-const any = require('@iterables/any')
+const all = require('@iterables/all')
 
-any('abc', xs => xs === 'c') // true
-any('abc', xs => xs === 'd') // false
-any([null, false, '']) // false
-any([null, false, {}]) // true
+all('abc', xs => xs === 'c') // false
+all('ccc', xs => xs === 'c') // true
+all([null, false, '']) // false
+all([true, {}]) // true
 ```
 
 ## Installation
 
 ```
-$ npm install --save @iterables/any
+$ npm install --save @iterables/all
 ```
 
 ## API
 
-### `any(iterable, test = Boolean) -> Iterator`
+### `all(iterable, test = Boolean) -> Iterator`
 
-* `iterable`: any `Iterator` — a generator instance, `Array`, `Map`, `String`, or `Set`
+* `iterable`: an `Iterator` — a generator instance, `Array`, `Map`, `String`, or `Set`
 * `test`: A function taking `xs` and returning a boolean value.
 
-Returns `true` if any element matched `test`, or `false` if no element matched.
+Returns `true` if all elements matched `test`, or `false` if any element failed.
 
-Stops consuming elements from `iterable` as soon as they pass `test`.
+Stops consuming elements from `iterable` as soon as they fail `test`.
 
 ## License
 
